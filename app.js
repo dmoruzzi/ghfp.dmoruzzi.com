@@ -14,7 +14,7 @@ function updateOutput(fileName) {
 
     if (key) {
       if (domain === "Secrets") {
-        imports += `echo "Initializing ${key}" with vault value\n`;
+        imports += `echo "Initializing ${key} with vault value"\n`;
         imports += `export ${key}=\${{ secrets.${value} }}\n`; // Use value instead of key
         imports += `echo "${key}=\${{ secrets.${value} }}" >> $GITHUB_ENV\n`;
       } else if (domain === "Variables") {
@@ -22,7 +22,7 @@ function updateOutput(fileName) {
         imports += `export ${key}=\${{ vars.${value} }}\n`;
         imports += `echo "${key}=\${{ vars.${value} }}" >> $GITHUB_ENV\n`;
       } else if (domain === "Runtime") {
-        imports += `echo "Initializing ${key}" to ${value}\n`;
+        imports += `echo "Initializing ${key} to ${value}"\n`;
         imports += `export ${key}="${value}"\n`;
         imports += `echo "${key}=${value}" >> $GITHUB_ENV\n`;
       }
