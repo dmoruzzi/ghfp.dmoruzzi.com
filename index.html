@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Actions File Writer</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2>GitHub Actions File Writer</h2>
+    
+    <label for="fileInput" class="custom-file-upload">
+      Choose a File
+      <input type="file" id="fileInput">
+    </label>
+
+    <div class="secret-inputs" id="secretInputs">
+      <h4>Enter Key-Value Pairs with Domain</h4>
+      <div id="secretList">
+        <!-- Key-Value pairs with domain selection will be dynamically added here -->
+      </div>
+      <button id="addSecret">Add Key-Value Pair</button>
+    </div>
+
+    <div class="output-box" id="outputBox" contenteditable="true">Generated output will appear here...</div>
+    <button id="copyButton">Copy Output</button>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
